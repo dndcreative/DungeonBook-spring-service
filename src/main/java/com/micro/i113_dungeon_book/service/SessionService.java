@@ -6,4 +6,8 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class SessionService {
+
+    public void test(){
+
+    }
 }
