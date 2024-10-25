@@ -1,0 +1,45 @@
+server:
+  port: 8088
+  ip: localhost
+
+#Logging
+logging:
+  level:
+    root: info
+  file:
+    name: logs/dnd/serv.log
+
+spring:
+  application:
+    name: api-dnd-service
+  datasource:
+    url: jdbc:postgresql://${server.ip}:5432/postgres?currentSchema=dnd
+    username: postgres
+    password: postgrespw
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+  properties:
+    hibernate:
+      default_schema: dnd
+  flyway:
+    url: jdbc:postgresql://${server.ip}:5432/postgres
+    user: postgres
+    password: postgrespw
+    default-schema: dnd
+#  security:
+#    oauth2:
+#      resource-server:
+#        jwt:
+#          issuer-uri: http://${server.ip}:28080/realms/i113_realm
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://${server.ip}:8761/eureka
+
+  instance:
+    status-page-url-path: actuator/info
+    health-check-url-path: actuator/health
+#    instance-id: "${spring.application.name}:${random.uuid}"
