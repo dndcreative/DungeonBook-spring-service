@@ -17,6 +17,8 @@ public class PlayerDto {
 
     private SessionDto session;
 
+    private String uuid;
+
     private String name;
     private String password;
     private PlayerType playerType;
