@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/dnd/special/")
+@RequestMapping("/api/dnd/skill/")
 public class SkillController {
 
     private SkillService service;

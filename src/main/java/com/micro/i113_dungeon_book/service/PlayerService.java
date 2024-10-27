@@ -47,20 +47,20 @@ public class PlayerService {
             Optional<UserEntity> userEntity = userRepository.findByUuid(UUID.fromString(dto.getUuid()));
             if(userEntity.isPresent()){
                 PlayerDto resultDto = playerConverter.convertEntityToDto(userEntity.get());
+//
+//                List<SessionEntity> sessions = sessionRepository.findAll();
+//                resultDto.setSession(sessionConverter.convertEntityToDto(sessions.get(0)));
+//
+//                Optional<CharacterEntity> characterEntity = characterRepository.findByUserId(userEntity.get().getUuid());
+//                CharacterDto characterDto = characterConverter.convertEntityToDto(characterEntity.get());
+//
+//                SkillDto skillDto = skillConverter.convertEntityToDto(characterEntity.get().getSkillEntity());
+//                characterDto.setSkillDto(skillDto);
+//
+//                characterDto.setAbilities(abilityConverter.convertEntitiesToDto(characterEntity.get().getAbilityEntityList()));
+//                characterDto.setInventory(equipmentConverter.convertEntitiesToDto(characterEntity.get().getInventoryEntities()));
 
-                List<SessionEntity> sessions = sessionRepository.findAll();
-                resultDto.setSession(sessionConverter.convertEntityToDto(sessions.get(0)));
-
-                Optional<CharacterEntity> characterEntity = characterRepository.findByUserId(userEntity.get().getUuid());
-                CharacterDto characterDto = characterConverter.convertEntityToDto(characterEntity.get());
-
-                SkillDto skillDto = skillConverter.convertEntityToDto(characterEntity.get().getSkillEntity());
-                characterDto.setSkillDto(skillDto);
-
-                characterDto.setAbilities(abilityConverter.convertEntitiesToDto(characterEntity.get().getAbilityEntityList()));
-                characterDto.setInventory(equipmentConverter.convertEntitiesToDto(characterEntity.get().getInventoryEntities()));
-
-                resultDto.setSelectedCharacter(characterDto);
+//                resultDto.setSelectedCharacter(characterDto);
                 return resultDto;
             }
             return new PlayerDto();

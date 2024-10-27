@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/dnd/inventory/")
+@RequestMapping("/api/dnd/equipment/")
 public class EquipmentController {
 
     private EquipmentService service;

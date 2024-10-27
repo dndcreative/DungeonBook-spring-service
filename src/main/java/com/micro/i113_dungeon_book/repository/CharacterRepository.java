@@ -8,6 +8,5 @@ import java.util.UUID;
 
 public interface CharacterRepository extends JpaRepository<CharacterEntity, Integer> {
 
-    Optional<CharacterEntity> findById(Integer id);
-    Optional<CharacterEntity> findByUserId(UUID id);
+//    Optional<CharacterEntity> findBy(UUID id);
 }

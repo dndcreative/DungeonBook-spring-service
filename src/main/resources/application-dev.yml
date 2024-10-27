@@ -19,7 +19,7 @@ spring:
     driver-class-name: org.postgresql.Driver
   jpa:
     database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
   properties:
     hibernate:
       default_schema: dnd
@@ -34,12 +34,12 @@ spring:
 #        jwt:
 #          issuer-uri: http://${server.ip}:28080/realms/i113_realm
 
-eureka:
-  client:
-    service-url:
-      default-zone: http://${server.ip}:8761/eureka
+#eureka:
+#  client:
+#    service-url:
+#      default-zone: http://${server.ip}:8761/eureka
 
-  instance:
-    status-page-url-path: actuator/info
-    health-check-url-path: actuator/health
+#  instance:
+#    status-page-url-path: actuator/info
+#    health-check-url-path: actuator/health
 #    instance-id: "${spring.application.name}:${random.uuid}"

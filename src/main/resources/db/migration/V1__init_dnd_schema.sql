@@ -4,8 +4,8 @@ SET search_path TO dnd;
 
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS characters;
-DROP TABLE IF EXISTS specials;
-DROP TABLE IF EXISTS inventory;
+DROP TABLE IF EXISTS skills;
+DROP TABLE IF EXISTS equipments;
 DROP TABLE IF EXISTS abilities;
 DROP TABLE IF EXISTS sessions;
 DROP TABLE IF EXISTS game_sessions;
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS characters
     health      INTEGER     not null DEFAULT 10,
     stamina     INTEGER     not null DEFAULT 10,
     mana        INTEGER     not null DEFAULT 10,
-    specials_id INTEGER     not null
+    skills_id INTEGER     not null
 );
 
 CREATE TABLE IF NOT EXISTS skills
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS skills
     luck         INTEGER NOT NULL DEFAULT 10
 );
 
-CREATE TABLE IF NOT EXISTS equipment
+CREATE TABLE IF NOT EXISTS equipments
 (
     id               SERIAL PRIMARY KEY,
     character_id     INTEGER      not null,
@@ -76,12 +76,12 @@ CREATE TABLE IF NOT EXISTS game_sessions
     UNIQUE (user_uuid, session_uuid)
 );
 
+-- ALTER TABLE characters
+--     ADD FOREIGN KEY (user_uuid) REFERENCES users (uuid);
 ALTER TABLE characters
-    ADD FOREIGN KEY (user_uuid) REFERENCES users (uuid);
-ALTER TABLE characters
-    ADD FOREIGN KEY (specials_id) REFERENCES specials (id);
+    ADD FOREIGN KEY (skills_id) REFERENCES skills (id);
 
-ALTER TABLE inventory
+ALTER TABLE equipments
     ADD FOREIGN KEY (character_id) REFERENCES characters (id);
 ALTER TABLE abilities
     ADD FOREIGN KEY (character_id) REFERENCES characters (id);
