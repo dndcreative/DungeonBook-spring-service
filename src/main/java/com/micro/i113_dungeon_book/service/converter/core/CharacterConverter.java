@@ -19,7 +19,7 @@ public class CharacterConverter {
                 .build();
     }
 
-    public CharacterEntity convertDtoToEntity(CharacterEntity inputDto) {
+    public CharacterEntity convertDtoToEntity(CharacterDto inputDto) {
         return CharacterEntity.builder()
                 .id(inputDto.getId())
                 .name(inputDto.getName())

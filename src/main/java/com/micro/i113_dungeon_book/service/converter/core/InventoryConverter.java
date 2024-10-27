@@ -29,6 +29,7 @@ public class InventoryConverter {
                 .id(inputEntity.getId())
                 .propName(inputEntity.getPropName())
                 .propDescription(inputEntity.getPropDescription())
+                .propText(inputEntity.getPropText())
                 .build();
     }
 
@@ -37,6 +38,7 @@ public class InventoryConverter {
                 .id(inputDto.getId())
                 .propName(inputDto.getPropName())
                 .propDescription(inputDto.getPropDescription())
+                .propText(inputDto.getPropText())
                 .build();
     }
 }

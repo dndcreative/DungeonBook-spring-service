@@ -16,6 +16,7 @@ public class AbilityDto {
     private String title;
     private String subtitle;
     private String description;
+    private String text;
 
 
 }

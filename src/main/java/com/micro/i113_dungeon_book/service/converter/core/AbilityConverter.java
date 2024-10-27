@@ -30,6 +30,7 @@ public class AbilityConverter {
                 .title(inputEntity.getTitle())
                 .subtitle(inputEntity.getSubtitle())
                 .description(inputEntity.getDescription())
+                .text(inputEntity.getAbilityText())
                 .build();
     }
 
@@ -39,6 +40,7 @@ public class AbilityConverter {
                 .title(inputDto.getTitle())
                 .subtitle(inputDto.getSubtitle())
                 .description(inputDto.getDescription())
+                .abilityText(inputDto.getText())
                 .build();
     }
 }

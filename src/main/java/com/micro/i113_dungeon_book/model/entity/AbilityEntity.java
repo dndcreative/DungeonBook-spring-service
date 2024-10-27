@@ -23,4 +23,5 @@ public class AbilityEntity {
     private String title;
     private String subtitle;
     private String description;
+    private String abilityText;
 }

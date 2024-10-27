@@ -45,7 +45,8 @@ CREATE TABLE IF NOT EXISTS inventory
     id               SERIAL PRIMARY KEY,
     character_id     INTEGER      not null,
     prop_name        VARCHAR(100) not null,
-    prop_description VARCHAR(255) not null
+    prop_description VARCHAR(255) not null,
+    prop_text        TEXT default ''
 );
 
 CREATE TABLE IF NOT EXISTS abilities
@@ -54,7 +55,8 @@ CREATE TABLE IF NOT EXISTS abilities
     character_id INTEGER      not null,
     title        VARCHAR(100) not null,
     subtitle     VARCHAR(100) not null,
-    description  VARCHAR(255) not null DEFAULT 'descr'
+    description  VARCHAR(255) not null DEFAULT 'descr',
+    ability_text TEXT                  default ''
 );
 
 CREATE TABLE IF NOT EXISTS sessions

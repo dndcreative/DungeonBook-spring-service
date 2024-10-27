@@ -15,4 +15,5 @@ public class InventoryDto {
 
     private String propName;
     private String propDescription;
+    private String propText;
 }

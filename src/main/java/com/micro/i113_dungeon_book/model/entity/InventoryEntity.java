@@ -21,4 +21,5 @@ public class InventoryEntity {
 
     private String propName;
     private String propDescription;
+    private String propText;
 }
