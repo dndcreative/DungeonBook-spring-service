@@ -8,6 +8,7 @@ DROP TABLE IF EXISTS specials;
 DROP TABLE IF EXISTS inventory;
 DROP TABLE IF EXISTS abilities;
 DROP TABLE IF EXISTS sessions;
+DROP TABLE IF EXISTS game_sessions;
 
 CREATE TABLE IF NOT EXISTS users
 (
@@ -69,14 +70,11 @@ CREATE TABLE IF NOT EXISTS sessions
 
 CREATE TABLE IF NOT EXISTS game_sessions
 (
-    session_id uuid    not null,
-    user_id    INTEGER not null
+    id         SERIAL PRIMARY KEY,
+    user_uuid    uuid not null,
+    session_uuid uuid not null,
+    UNIQUE (user_uuid, session_uuid)
 );
-
-ALTER TABLE game_sessions
-    ADD FOREIGN KEY (session_id) REFERENCES sessions (uuid);
-ALTER TABLE game_sessions
-    ADD FOREIGN KEY (user_id) REFERENCES users (uuid);
 
 ALTER TABLE characters
     ADD FOREIGN KEY (user_id) REFERENCES users (uuid);

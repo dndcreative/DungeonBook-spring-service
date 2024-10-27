@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 public class SessionDto {
 
     private String uuid;
+    private String userUuid;
 
     private String name;
     private String password;
