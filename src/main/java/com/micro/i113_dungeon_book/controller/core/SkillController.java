@@ -1,7 +1,7 @@
 package com.micro.i113_dungeon_book.controller.core;
 
-import com.micro.i113_dungeon_book.model.dto.core.SpecialDto;
-import com.micro.i113_dungeon_book.service.core.SpecialService;
+import com.micro.i113_dungeon_book.model.dto.core.SkillDto;
+import com.micro.i113_dungeon_book.service.core.SkillService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/dnd/special/")
-public class SpecialController {
+public class SkillController {
 
-    private SpecialService service;
+    private SkillService service;
 
     @PutMapping("/")
-    public SpecialDto update(@RequestBody SpecialDto dto) {
+    public SkillDto update(@RequestBody SkillDto dto) {
         return service.update(dto);
     }
 }

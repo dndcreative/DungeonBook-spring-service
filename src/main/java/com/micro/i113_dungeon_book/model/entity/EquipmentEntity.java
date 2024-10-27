@@ -1,16 +1,22 @@
-package com.micro.i113_dungeon_book.model.dto.core;
+package com.micro.i113_dungeon_book.model.entity;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 @Builder
-public class InventoryDto {
+@Entity
+@Table(name = "equipment")
+public class EquipmentEntity {
 
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String propName;

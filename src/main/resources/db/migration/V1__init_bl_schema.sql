@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS users
 CREATE TABLE IF NOT EXISTS characters
 (
     id          SERIAL PRIMARY KEY,
-    user_id     INTEGER     not null,
+    user_uuid     uuid     not null,
     name        VARCHAR(90) NOT NULL,
     health      INTEGER     not null DEFAULT 10,
     stamina     INTEGER     not null DEFAULT 10,
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS characters
     specials_id INTEGER     not null
 );
 
-CREATE TABLE IF NOT EXISTS specials
+CREATE TABLE IF NOT EXISTS skills
 (
     id           SERIAL PRIMARY KEY,
     strength     INTEGER NOT NULL DEFAULT 10,
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS specials
     luck         INTEGER NOT NULL DEFAULT 10
 );
 
-CREATE TABLE IF NOT EXISTS inventory
+CREATE TABLE IF NOT EXISTS equipment
 (
     id               SERIAL PRIMARY KEY,
     character_id     INTEGER      not null,
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS game_sessions
 );
 
 ALTER TABLE characters
-    ADD FOREIGN KEY (user_id) REFERENCES users (uuid);
+    ADD FOREIGN KEY (user_uuid) REFERENCES users (uuid);
 ALTER TABLE characters
     ADD FOREIGN KEY (specials_id) REFERENCES specials (id);
 

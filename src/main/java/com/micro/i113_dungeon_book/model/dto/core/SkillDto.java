@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Builder
-public class SpecialDto {
+public class SkillDto {
 
     private Integer id;
 

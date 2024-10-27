@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,5 +26,14 @@ public class CharacterEntity {
     private Integer health;
     private Integer stamina;
     private Integer mana;
+
+    @OneToOne
+    private SkillEntity skillEntity;
+
+    @OneToMany
+    private List<AbilityEntity> abilityEntityList;
+
+    @OneToMany
+    private List<EquipmentEntity> inventoryEntities;
 
 }

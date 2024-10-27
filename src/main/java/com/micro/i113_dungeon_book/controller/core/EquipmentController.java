@@ -1,7 +1,7 @@
 package com.micro.i113_dungeon_book.controller.core;
 
-import com.micro.i113_dungeon_book.model.dto.core.InventoryDto;
-import com.micro.i113_dungeon_book.service.core.InventoryService;
+import com.micro.i113_dungeon_book.model.dto.core.EquipmentDto;
+import com.micro.i113_dungeon_book.service.core.EquipmentService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/dnd/inventory/")
-public class InventoryController {
+public class EquipmentController {
 
-    private InventoryService service;
+    private EquipmentService service;
 
     @PutMapping("/")
-    public InventoryDto update(@RequestBody InventoryDto dto) {
+    public EquipmentDto update(@RequestBody EquipmentDto dto) {
         return service.update(dto);
     }
 

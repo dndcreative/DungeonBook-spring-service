@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "specials")
-public class SpecialEntity {
+@Table(name = "skills")
+public class SkillEntity {
 
     @Id
     @Column(name = "id")
