@@ -7,6 +7,4 @@ import java.util.Optional;
 
 public interface EquipmentRepository extends JpaRepository<EquipmentEntity, Integer> {
 
-    Optional<EquipmentEntity> findById(Integer id);
-
 }

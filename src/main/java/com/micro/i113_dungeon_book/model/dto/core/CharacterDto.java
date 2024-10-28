@@ -22,6 +22,9 @@ public class CharacterDto {
     private int mana;
 
     private SkillDto skillDto;
-    private List<EquipmentDto> inventory;
-    private List<AbilityDto> abilities;
+
+    private String equipment;
+    private List<EquipmentDto> equipmentList;
+    private String ability;
+    private List<AbilityDto> abilitiesList;
 }

@@ -7,5 +7,4 @@ import java.util.Optional;
 
 public interface AbilitiesRepository extends JpaRepository<AbilityEntity, Integer> {
 
-    Optional<AbilityEntity> findById(Integer id);
 }

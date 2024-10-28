@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Component
@@ -27,7 +26,7 @@ public class SessionConverter {
 
     public SessionDto convertEntityToDto(SessionEntity inputEntity) {
         return SessionDto.builder()
-                .uuid(inputEntity.getUuid().toString())
+                .id(inputEntity.getId())
                 .name(inputEntity.getName())
                 .password(inputEntity.getPassword())
                 .maxUsers(inputEntity.getMaxUsers())
@@ -36,7 +35,7 @@ public class SessionConverter {
 
     public SessionEntity convertDtoToEntity(SessionDto inputDto) {
         return SessionEntity.builder()
-                .uuid(UUID.fromString(inputDto.getUuid()))
+                .id(inputDto.getId())
                 .name(inputDto.getName())
                 .password(inputDto.getPassword())
                 .maxUsers(inputDto.getMaxUsers())

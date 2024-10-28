@@ -6,8 +6,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.UUID;
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -17,8 +15,9 @@ import java.util.UUID;
 public class SessionEntity {
 
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    UUID uuid;
+    private Integer id;
 
     private String name;
     private String password;

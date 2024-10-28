@@ -7,5 +7,4 @@ import java.util.Optional;
 
 public interface GamesRepository extends JpaRepository<GameEntity, Integer> {
 
-    public Optional<GameEntity> findByUserUUIDAndSessionUUID(String userUUID, String sessionUUID);
 }

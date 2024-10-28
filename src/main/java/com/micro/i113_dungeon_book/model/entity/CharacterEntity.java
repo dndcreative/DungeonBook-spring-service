@@ -28,12 +28,13 @@ public class CharacterEntity {
     private Integer mana;
 
     @OneToOne
+    @JoinColumn(name = "skills_id", referencedColumnName = "id")
     private SkillEntity skillEntity;
 
-    @OneToMany
+    @OneToMany(mappedBy="id")
     private List<AbilityEntity> abilityEntityList;
 
-    @OneToMany
-    private List<EquipmentEntity> inventoryEntities;
+    @OneToMany(mappedBy="id")
+    private List<EquipmentEntity> equipmentEntities;
 
 }

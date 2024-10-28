@@ -5,15 +5,13 @@ import com.micro.i113_dungeon_book.model.entity.UserEntity;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.util.UUID;
-
 @Component
 @AllArgsConstructor
 public class PlayerConverter {
 
     public PlayerDto convertEntityToDto(UserEntity inputEntity) {
         return PlayerDto.builder()
-                .uuid(inputEntity.getUuid().toString())
+                .id(inputEntity.getId())
                 .name(inputEntity.getName())
                 .password(inputEntity.getPassword())
                 .playerType(inputEntity.getType())
@@ -22,7 +20,7 @@ public class PlayerConverter {
 
     public UserEntity convertDtoToEntity(PlayerDto inputDto) {
         return UserEntity.builder()
-                .uuid(inputDto.getUuid() != null ? UUID.fromString(inputDto.getUuid()) : UUID.randomUUID())
+                .id(inputDto.getId())
                 .name(inputDto.getName())
                 .password(inputDto.getPassword())
                 .type(inputDto.getPlayerType())

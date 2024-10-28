@@ -19,6 +19,6 @@ public class GameEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String sessionUUID;
-    private String userUUID;
+    private Integer sessionId;
+    private String userId;
 }

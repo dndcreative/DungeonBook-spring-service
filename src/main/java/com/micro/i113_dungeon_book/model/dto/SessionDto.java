@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @Builder
 public class SessionDto {
 
-    private String uuid;
-    private String userUuid;
+    private Integer id;
+    private Integer userId;
 
     private String name;
     private String password;

@@ -12,7 +12,7 @@ DROP TABLE IF EXISTS game_sessions;
 
 CREATE TABLE IF NOT EXISTS users
 (
-    uuid     uuid PRIMARY KEY     DEFAULT gen_random_uuid(),
+    id       SERIAL PRIMARY KEY,
     name     VARCHAR(50) not null,
     password VARCHAR(25) not null,
     type     VARCHAR(10) NOT NULL DEFAULT 'PLAYER'
@@ -20,12 +20,12 @@ CREATE TABLE IF NOT EXISTS users
 
 CREATE TABLE IF NOT EXISTS characters
 (
-    id          SERIAL PRIMARY KEY,
-    user_uuid     uuid     not null,
-    name        VARCHAR(90) NOT NULL,
-    health      INTEGER     not null DEFAULT 10,
-    stamina     INTEGER     not null DEFAULT 10,
-    mana        INTEGER     not null DEFAULT 10,
+    id        SERIAL PRIMARY KEY,
+    user_id   Integer     not null,
+    name      VARCHAR(90) NOT NULL,
+    health    INTEGER     not null DEFAULT 10,
+    stamina   INTEGER     not null DEFAULT 10,
+    mana      INTEGER     not null DEFAULT 10,
     skills_id INTEGER     not null
 );
 
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS abilities
 
 CREATE TABLE IF NOT EXISTS sessions
 (
-    uuid      uuid PRIMARY KEY      DEFAULT gen_random_uuid(),
+    id        SERIAL PRIMARY KEY,
     name      VARCHAR(100) not null,
     password  VARCHAR(100) not null,
     max_users int          not null DEFAULT 4
@@ -71,13 +71,13 @@ CREATE TABLE IF NOT EXISTS sessions
 CREATE TABLE IF NOT EXISTS game_sessions
 (
     id         SERIAL PRIMARY KEY,
-    user_uuid    uuid not null,
-    session_uuid uuid not null,
-    UNIQUE (user_uuid, session_uuid)
+    user_id    INTEGER not null,
+    session_id INTEGER not null,
+    UNIQUE (user_id, session_id)
 );
 
--- ALTER TABLE characters
---     ADD FOREIGN KEY (user_uuid) REFERENCES users (uuid);
+ALTER TABLE characters
+    ADD FOREIGN KEY (user_id) REFERENCES users (id);
 ALTER TABLE characters
     ADD FOREIGN KEY (skills_id) REFERENCES skills (id);
 

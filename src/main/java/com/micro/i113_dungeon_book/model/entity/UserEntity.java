@@ -7,7 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.UUID;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -18,13 +18,18 @@ import java.util.UUID;
 public class UserEntity {
 
     @Id
-    @Column(name = "uuid")
-    private UUID uuid;
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     private String name;
     private String password;
 
     @Enumerated(EnumType.STRING)
     private PlayerType type;
+
+    @OneToMany(mappedBy="id")
+    List<CharacterEntity> characterEntities;
+
 
 }
